@@ -1,4 +1,4 @@
-# Sistema de Gestão de Faturamento e Estoque (Korp Teste Técnico)
+# Sistema de Gestão de Faturamento e Estoque
 
 Este projeto consiste em um ecossistema de microsserviços para o gerenciamento de produtos, controle de estoque e emissão de notas fiscais. A solução foi desenvolvida com foco em escalabilidade, resiliência e boas práticas de arquitetura (Clean Code).
 
