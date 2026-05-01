@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="../ServicoEstoque.Application/ServicoEstoque.Application.csproj" />
+  <Project Path="../ServicoEstoque.Core/ServicoEstoque.Core.csproj" />
+  <Project Path="../ServicoEstoque.Infrastructure/ServicoEstoque.Infrastructure.csproj" />
+  <Project Path="../ServicoEstoque.Shared/ServicoEstoque.Shared.csproj" />
+  <Project Path="../ServicoEstoque.Tests/ServicoEstoque.Tests.csproj" />
+  <Project Path="ServicoEstoque.Api.csproj" />
+</Solution>

@@ -1,0 +1,61 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, retry, catchError, throwError } from 'rxjs';
+import { Produto } from '../models/produto.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProdutoService {
+  private apiUrl = 'https://localhost:7060/api/Produto';
+
+  constructor(private http: HttpClient) { }
+
+  listar(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.apiUrl).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+  obterPorId(id: number): Observable<Produto> {
+    return this.http.get<Produto>(`${this.apiUrl}/${id}`).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+  criar(produto: Produto): Observable<Produto> {
+    if (produto.saldo < 1) {
+      console.warn('Produto não será criado: valor menor que 1');
+      return throwError(() => new Error('O valor do produto deve ser maior ou igual a 1'));
+    }
+
+    return this.http.post<Produto>(this.apiUrl, produto).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+  atualizar(id: number, produto: Produto): Observable<Produto> {
+    produto.id = id
+    return this.http.put<Produto>(`${this.apiUrl}/${id}`, produto).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+
+  excluir(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+  private handleError(error: any): Observable<never> {
+    console.error('Erro no serviço de produtos:', error);
+    return throwError(() => error);
+  }
+}
+

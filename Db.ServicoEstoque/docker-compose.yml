@@ -1,0 +1,24 @@
+services:
+  servicoestoque-db:
+    image: postgres:18
+    networks:
+      - servicoestoque-network
+    container_name: servicoestoque-db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=servicoestoque
+    ports:
+      - 5595:5432
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d
+      - servicoestoque-db-data:/var/lib/postgresql
+    restart: always
+
+volumes:
+  servicoestoque-db-data:
+    name: servicoestoque-db-data
+
+networks:
+  servicoestoque-network:
+    driver: bridge

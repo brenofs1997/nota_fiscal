@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="../ServicoFaturamento.Aplication/ServicoFaturamento.Application.csproj" Id="ada4bd70-1440-4bd6-a3e6-63337f5e63cf" />
+  <Project Path="../ServicoFaturamento.Core/ServicoFaturamento.Core.csproj" Id="d87aba2e-0977-4fe3-844a-d6812df5194f" />
+  <Project Path="../ServicoFaturamento.Infrastructure/ServicoFaturamento.Infrastructure.csproj" Id="fb955207-feb0-4be8-9b00-88fae67d4625" />
+  <Project Path="../ServicoFaturamento.Shared/ServicoFaturamento.Shared.csproj" Id="f5592de0-0bf1-49ae-817b-da823f3eb749" />
+  <Project Path="../Tests/ServicoFaturamento.Tests.csproj" Id="1d41d9d0-91f2-4b1b-b1be-7dd3fa6df803" />
+  <Project Path="ServicoFaturamento.Api.csproj" />
+</Solution>

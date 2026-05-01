@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServicoEstoque.Application\ServicoEstoque.Application.csproj" />
+    <ProjectReference Include="..\ServicoEstoque.Core\ServicoEstoque.Core.csproj" />
+    <ProjectReference Include="..\ServicoEstoque.Infrastructure\ServicoEstoque.Infrastructure.csproj" />
+    <ProjectReference Include="..\ServicoEstoque.Shared\ServicoEstoque.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
